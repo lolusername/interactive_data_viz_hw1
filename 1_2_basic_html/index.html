@@ -10,10 +10,71 @@
   <h1>Hello World!</h1>
   <h3>Tutorial Assignment: 1_2_basic_html </h3>
   <table>
-    <!-- Add your table data here -->
+    <!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
+
+
+<!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
+<table class="animal_table">
+  <thead>
+    <tr>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Wingspan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>3</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
   </table>
-  <svg>
-    <!-- Add your rectangles in here -->
-  </svg>
+  <svg id="rect_svg" xmlns="http://www.w3.org/2000/svg">
+  <text y="100">un rectangulo</text>
+  <rect width="200" height="60" />
+  <path fill="green"
+    d="M -200,-300
+           A 120,120,10,0,1 50,30
+         " />
+
+</svg>
+<img src="https://www.princeton.edu/sites/default/files/styles/full_2x/public/images/2022/02/KOA_Nassau_2697x1517.jpg?itok=Hy5eTACi" width="500px" alt="">
 </body>
 </html>
+<style>
+  .animal_table {
+    font-size:1.3rem;
+    border-collapse: collapse;
+  }
+  .animal_table th {
+    font-size:2rem;
+    font-weight: 900;
+  }
+  .animal_table th, td {
+  border: 1px  solid black;
+  border-width: 2px 1px;
+  padding:.5rem
+}
+#rect_svg {
+  padding: 2rem 0
+}
+</style>
+
+<script>
+
+</script>
