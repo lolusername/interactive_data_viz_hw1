@@ -39,14 +39,11 @@ Promise.all([
     .attr("fill", "transparent")
     .attr("d", path);
 
-  // draw point for CUNY graduate center
-  const gradCenterPoint = { latitude: 40.7423, longitude: -73.9833 };
-
   const myColor = d3.scaleLinear().domain([1, 40]).range(["blue", "red"]);
 
   // draw point for all state extremes
   svg
-    .selectAll("circle.capital")
+    .selectAll("circle.extreme")
     .data(extremes)
     .join("circle")
     .attr("r", (d) => Math.abs(d["Change in 95 percent Days"]) / 2)
