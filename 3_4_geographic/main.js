@@ -69,10 +69,14 @@ function init() {
   //   40.1562° N, 83.1180° W The Columbus Zoo and Aquarium
   // top 4 largest zoos! cool
   const top4Zoos = [
-    { latitude: 40.8506, longitude: -73.877 },
-    { latitude: 44.7674, longitude: -93.1958 },
-    { latitude: 28.3574, longitude: -81.5906 },
-    { latitude: 40.1562, longitude: -83.118 },
+    { latitude: 40.8506, longitude: -73.877, name: "Bronx Zoo" },
+    { latitude: 44.7674, longitude: -93.1958, name: "MN Zoo" },
+    { latitude: 28.3574, longitude: -81.5906, name: "Disney's Animal Kingdom" },
+    {
+      latitude: 40.1562,
+      longitude: -83.118,
+      name: "The Columbus Zoo and Aquarium",
+    },
   ];
   const circle = svg
     .selectAll("circle")
@@ -85,22 +89,15 @@ function init() {
       return `translate(${x}, ${y})`;
     });
 
-  // EXAMPLE 2: going from x, y => lat-long
-  // this triggers any movement at all while on the svg
   circle.on("mouseover", (mouseEvent, d) => {
-    // when the mouse rolls over this feature, do this
-    state.hover["lat"] = d.latitude;
-    state.hover["long"] = d.longitude;
-    draw(); // re-call the draw function when we set a new hoveredState
+    state.hover["Name"] = d.name;
+
+    draw();
   });
 
-  draw(); // calls the draw function
+  draw();
 }
 
-/**
- * DRAW FUNCTION
- * we call this every time there is an update to the data/state
- * */
 function draw() {
   // return an array of [key, value] pairs
   hoverData = Object.entries(state.hover);
